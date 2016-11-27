@@ -1,0 +1,181 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    android:orientation="vertical"
+    >
+
+    <LinearLayout
+        android:id="@+id/front"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/tb_detail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/material" />
+
+
+        <android.support.design.widget.CoordinatorLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <android.support.design.widget.AppBarLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+<!--
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:text="食品图片1111111111111"
+                    android:textColor="@color/white"
+                    android:gravity="center"
+                    android:background="@color/gray"
+                    app:layout_scrollFlags="scroll|enterAlways" />
+
+                <ImageView
+                    android:id="@+id/f_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:background="@drawable/header"
+                    app:layout_scrollFlags="scroll|enterAlways"/>
+-->
+                <FrameLayout
+                    android:id="@+id/framelayout"
+                    android:layout_width="fill_parent"
+                    android:layout_height="300dip"
+                    android:orientation="vertical" >
+
+                    <com.example.dell.muc_foods.viewflow.ViewFlow
+                        android:id="@+id/viewflow"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent" />
+
+                    <FrameLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom"
+                        android:background="#00000000"
+                        android:gravity="center"
+                        android:padding="3dip" >
+
+                        <com.example.dell.muc_foods.viewflow.CircleFlowIndicator
+                            android:id="@+id/viewflowindic"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal|bottom"
+                            android:padding="2dip"
+                            app:activeColor="#ff0000"
+                            app:activeType="fill"
+                            app:circleSeparation="20dip"
+                            app:inactiveColor="#ffffff"
+                            app:inactiveType="fill"
+                            app:radius="4dip" />
+                    </FrameLayout>
+                </FrameLayout>
+
+                <android.support.design.widget.TabLayout
+                    android:id="@+id/tab_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    app:tabIndicatorColor="@color/material_dark"
+                    app:tabSelectedTextColor="@color/material_dark" />
+
+            </android.support.design.widget.AppBarLayout>
+
+
+            <android.support.v4.view.ViewPager
+                android:id="@+id/view_pager_detail"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/fab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|right"
+                android:layout_margin="16dp"
+                android:src="@mipmap/ic_add_white"
+                app:borderWidth="0dp"
+                app:elevation="12dp"
+                app:rippleColor="@color/white" />
+
+        </android.support.design.widget.CoordinatorLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/bottom"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_gravity="bottom"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:visibility="invisible">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/tv_close_bottom"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:paddingLeft="16dp"
+                android:gravity="left"
+                android:text="关闭"
+                android:textColor="@color/red"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="加入我的收藏"
+                android:textColor="@color/material_dark"/>
+
+            <TextView
+                android:id="@+id/create_collect"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:paddingRight="16dp"
+                android:gravity="right"
+                android:text="新建"
+                android:textColor="@color/red"/>
+        </LinearLayout>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="收藏1" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="收藏2" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="收藏3" />
+    </LinearLayout>
+
+</FrameLayout>
