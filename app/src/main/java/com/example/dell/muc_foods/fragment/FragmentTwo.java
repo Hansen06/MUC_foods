@@ -8,11 +8,14 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 
 import com.example.dell.muc_foods.R;
 import com.example.dell.muc_foods.adapter.Fooddetail_Adapter;
+import com.example.dell.muc_foods.adapter.ViewFlowAdapter;
 import com.example.dell.muc_foods.util.Food;
+import com.example.dell.muc_foods.util.Resfood_Viewflow;
+import com.example.dell.muc_foods.viewflow.CircleFlowIndicator;
+import com.example.dell.muc_foods.viewflow.ViewFlow;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,10 +25,14 @@ import java.util.List;
  * Created by clevo on 2015/7/30.
  */
 public class FragmentTwo  extends Fragment {
-    private  ImageView imageView;
-    private List<String> mDatas;
+
     private List<Food> foodList;
-    private List<Food> foodList1;
+
+    private List<Resfood_Viewflow> resfoods;
+
+    private ViewFlow mViewFlow;
+    private CircleFlowIndicator mFlowIndicator;
+
     public static FragmentTwo newInstance(){
 
         return new FragmentTwo();
@@ -45,10 +52,7 @@ public class FragmentTwo  extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.detail_fragment_two,container,false );
 
-//        mDatas = new ArrayList<String>();
-//        for (int i = 'A'; i <= 'J'; i++) {
-//            mDatas.add("" + (char) i);
-//        }
+
 
         foodList = new ArrayList<Food>();
         Food f1 = new Food(R.mipmap.first_t14, "锅包肉盖饭");
@@ -82,19 +86,40 @@ public class FragmentTwo  extends Fragment {
         Food f15 = new Food(R.mipmap.first_t12, "豆花牛肉盖饭");
         foodList.add(f15);
 
-
-
         RecyclerView recyclerView= (RecyclerView) view.findViewById(R.id.recycler_fragment_two);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 //        Res_FoodAdapter adapter=new Res_FoodAdapter(getActivity(),mDatas);
         Fooddetail_Adapter adapter = new Fooddetail_Adapter(getActivity(),foodList);
         recyclerView.setAdapter(adapter);
-        return view;
-//        View view=inflater.inflate(R.layout.commodity_details_fragment, container, false);
-//        imageView = (ImageView) view.findViewById(R.id.imageView);
-//        imageLoader=new ImageLoader(getActivity().getApplicationContext());
-//        imageLoader.DisplayImage(getUrl(), imageView);
-//        return view;
 
+        initBanner();
+        return view;
+
+    }
+
+    private void initBanner() {
+
+        mViewFlow = (ViewFlow) getActivity().findViewById(R.id.viewflow);
+        mFlowIndicator = (CircleFlowIndicator) getActivity().findViewById(R.id.viewflowindic);
+
+        resfoods = new ArrayList<Resfood_Viewflow>();
+        Resfood_Viewflow f1_1 = new Resfood_Viewflow(R.drawable.f1);
+        resfoods.add(f1_1);
+        Resfood_Viewflow f1_2 = new Resfood_Viewflow(R.drawable.f1);
+        resfoods.add(f1_2);
+        Resfood_Viewflow f1_3 = new Resfood_Viewflow(R.drawable.f1);
+        resfoods.add(f1_3);
+        Resfood_Viewflow f1_4 = new Resfood_Viewflow(R.drawable.f1);
+        resfoods.add(f1_4);
+
+        ViewFlowAdapter viewadapter = new ViewFlowAdapter(getActivity(),resfoods);
+        mViewFlow.setAdapter(viewadapter);
+
+        mViewFlow.setmSideBuffer(resfoods.size()); // 实际图片张数，
+        // 我的ImageAdapter实际图片张数为3
+        mViewFlow.setFlowIndicator(mFlowIndicator);
+        mViewFlow.setTimeSpan(4500);
+        mViewFlow.setSelection(resfoods.size() * 1000); // 设置初始位置
+        mViewFlow.startAutoFlowTimer(); // 启动自动播放
     }
 }

@@ -47,7 +47,7 @@
                 <FrameLayout
                     android:id="@+id/framelayout"
                     android:layout_width="fill_parent"
-                    android:layout_height="300dip"
+                    android:layout_height="200dp"
                     android:orientation="vertical" >
 
                     <com.example.dell.muc_foods.viewflow.ViewFlow
