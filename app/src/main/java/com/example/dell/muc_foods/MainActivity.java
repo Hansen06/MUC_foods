@@ -126,9 +126,9 @@ public class MainActivity extends AppCompatActivity
 //            @Override
 //            public void onItemClick(View view, int position) {
 //                Log.e("position", "=" + position);
-////                Toast.makeText(MainActivity.this, productList.get(position).getTitle(), Toast.LENGTH_SHORT).show();
+////                Toast.makeText(CommentMainActivity.this, productList.get(position).getTitle(), Toast.LENGTH_SHORT).show();
 //                Intent intent = new Intent();
-//                intent.setClass(MainActivity.this, FoodDetailActivity.class);
+//                intent.setClass(CommentMainActivity.this, FoodDetailActivity.class);
 //                startActivity(intent);
 //
 //            }
@@ -330,6 +330,9 @@ public class MainActivity extends AppCompatActivity
             startActivity(intent);
 
         } else if (id == R.id.my_collect) {
+            Intent intent = new Intent();
+            intent.setClass(MainActivity.this, FavoriteActivity.class);
+            startActivity(intent);
 
         } else if (id == R.id.setting) {
 

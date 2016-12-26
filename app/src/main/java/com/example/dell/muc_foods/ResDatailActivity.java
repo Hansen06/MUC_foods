@@ -1,5 +1,6 @@
 package com.example.dell.muc_foods;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -22,9 +23,6 @@ import com.example.dell.muc_foods.res_fragment.Res_FragmentTwo;
  */
 public class ResDatailActivity extends AppCompatActivity{
 
-    private LinearLayout mRecommendLayout;
-    private LinearLayout mHotLayout;
-    private LinearLayout mNewLayout;
 
     SharedPreferences sharePreferState;
 
@@ -59,11 +57,11 @@ public class ResDatailActivity extends AppCompatActivity{
         tb.setNavigationIcon(R.mipmap.ic_arrow_back_white);
 
         Intent intent = getIntent();
-//        String meau_id = intent.getStringExtra("click_meau");
+        String meau_id = intent.getStringExtra("click_meau");
 
 
-        sharePreferState = getSharedPreferences("choose_res", MODE_PRIVATE);
-        String meau_id = sharePreferState.getString("res_no", null);// 读取SharedPreferences得到登录状态
+//        sharePreferState = getSharedPreferences("choose_res", MODE_PRIVATE);
+//        String meau_id = sharePreferState.getString("res_no", null);// 读取SharedPreferences得到登录状态
         Log.e("meau_id", "=" + meau_id);
 
         if(meau_id.equals("1")){
@@ -128,5 +126,22 @@ public class ResDatailActivity extends AppCompatActivity{
     @Override
     protected void onDestroy() {
         super.onDestroy();
+    }
+
+    /**
+     * Created by DELL on 2016/12/19.
+     */
+
+    public static class FavoriteActivity extends Activity {
+        @Override
+        protected void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+            setContentView(R.layout.favoritem);
+        }
+
+        @Override
+        protected void onDestroy() {
+            super.onDestroy();
+        }
     }
 }

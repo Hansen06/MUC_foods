@@ -18,4 +18,34 @@
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
+    <style name="RatingBar1" parent="@android:style/Widget.RatingBar">
+        <item name="android:progressDrawable">@drawable/rating_bar</item>
+        <item name="android:maxHeight">32dp</item>
+        <item name="android:isIndicator">false</item>
+        <item name="android:minHeight">16dp</item>
+    </style>
+
+    <!-- 按钮样式 -->
+    <style name="btn_bg_and_textcolor">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/px85</item>
+        <item name="android:textSize">@dimen/px28</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/zgq_btn_bg_selector</item>
+        <item name="android:textColor">@drawable/zgq_btn_text_color</item>
+    </style>
+    <!--评分 星星-->
+    <style name="RatingBar" parent="@android:style/Widget.RatingBar">
+        <item name="android:progressDrawable">@drawable/rating_bar</item>
+        <item name="android:maxHeight">32dp</item>
+        <item name="android:isIndicator">true</item>
+        <item name="android:minHeight">16dp</item>
+    </style>
+    <style name="RatingBar11" parent="@android:style/Widget.RatingBar">
+        <item name="android:progressDrawable">@drawable/rating_bar</item>
+        <item name="android:maxHeight">32dp</item>
+        <item name="android:isIndicator">false</item>
+        <item name="android:minHeight">16dp</item>
+    </style>
+
 </resources>

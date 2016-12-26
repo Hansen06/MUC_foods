@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="140dp"
     android:orientation="horizontal" >
 
     <LinearLayout
@@ -58,11 +58,36 @@
         android:textStyle="bold"
         android:text="￥12"/>
 
+    <RatingBar
+         android:id="@+id/m_ratingBar_muc"
+         android:layout_width="wrap_content"
+         android:layout_height="22dp"
+         android:numStars="5"
+         style="@style/RatingBar1"
+         android:rating="4.0"
+         android:minHeight="16dp"
+         android:maxHeight="32dp"
+         android:stepSize="0.1"
+
+        android:layout_below="@+id/food_detail"
+        android:layout_alignEnd="@+id/food_price"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="10dp"
+        
+        />
     <!--
-    <TextView
-        android:id="@+id/id_fooditemview"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"/>
-        -->
+        <RatingBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/ratingBar"
+            android:layout_alignBottom="@+id/left"
+            android:layout_toEn"@+id/left" />
+
+
+        <TextView
+            android:id="@+id/id_fooditemview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"/>
+            -->
 </RelativeLayout>

@@ -57,8 +57,8 @@ public class Fooddetail_Adapter extends RecyclerView.Adapter<Fooddetail_Adapter.
 
         public FoodViewHolder(View itemView){
             super(itemView);
-            imageView= (ImageView) itemView.findViewById(R.id.food_des_img );
-            textView= (TextView) itemView.findViewById(R.id.food_des_title);
+            imageView = (ImageView) itemView.findViewById(R.id.food_des_img );
+            textView = (TextView) itemView.findViewById(R.id.food_des_title);
         }
 
     }

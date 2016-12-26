@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.dell.muc_foods.MainActivity;
 import com.example.dell.muc_foods.R;
 import com.example.dell.muc_foods.adapter.Fooddetail_Adapter;
 import com.example.dell.muc_foods.adapter.ViewFlowAdapter;
@@ -26,9 +27,11 @@ import java.util.List;
  */
 public class FragmentTwo  extends Fragment {
 
+    int pos = Integer.parseInt(MainActivity.instance.getImg_position());
+
     private List<Food> foodList;
 
-    private List<Resfood_Viewflow> resfoods;
+    private List<Resfood_Viewflow> resfoods ,resfood_viewflows;
 
     private ViewFlow mViewFlow;
     private CircleFlowIndicator mFlowIndicator;
@@ -51,8 +54,6 @@ public class FragmentTwo  extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.detail_fragment_two,container,false );
-
-
 
         foodList = new ArrayList<Food>();
         Food f1 = new Food(R.mipmap.first_t14, "锅包肉盖饭");
@@ -103,23 +104,53 @@ public class FragmentTwo  extends Fragment {
         mFlowIndicator = (CircleFlowIndicator) getActivity().findViewById(R.id.viewflowindic);
 
         resfoods = new ArrayList<Resfood_Viewflow>();
-        Resfood_Viewflow f1_1 = new Resfood_Viewflow(R.drawable.f1);
-        resfoods.add(f1_1);
-        Resfood_Viewflow f1_2 = new Resfood_Viewflow(R.drawable.f1);
-        resfoods.add(f1_2);
-        Resfood_Viewflow f1_3 = new Resfood_Viewflow(R.drawable.f1);
-        resfoods.add(f1_3);
-        Resfood_Viewflow f1_4 = new Resfood_Viewflow(R.drawable.f1);
-        resfoods.add(f1_4);
+        resfood_viewflows = new ArrayList<Resfood_Viewflow>();
 
-        ViewFlowAdapter viewadapter = new ViewFlowAdapter(getActivity(),resfoods);
+        Resfood_Viewflow f1 = new Resfood_Viewflow(R.mipmap.first_t14);
+        resfoods.add(f1);
+        Resfood_Viewflow f2 = new Resfood_Viewflow(R.mipmap.first_r5);
+        resfoods.add(f2);
+        Resfood_Viewflow f3 = new Resfood_Viewflow(R.mipmap.first_r7);
+        resfoods.add(f3);
+        Resfood_Viewflow f4 = new Resfood_Viewflow(R.mipmap.first_r9);
+        resfoods.add(f4);
+        Resfood_Viewflow f5 = new Resfood_Viewflow(R.mipmap.first_r10);
+        resfoods.add(f5);
+        Resfood_Viewflow f6 = new Resfood_Viewflow(R.mipmap.first_r2);
+        resfoods.add(f6);
+        Resfood_Viewflow f7 = new Resfood_Viewflow(R.mipmap.first_t16);
+        resfoods.add(f7);
+        Resfood_Viewflow f8 = new Resfood_Viewflow(R.mipmap.first_t18);
+        resfoods.add(f8);
+        Resfood_Viewflow f9 = new Resfood_Viewflow(R.mipmap.first_t20);
+        resfoods.add(f9);
+        Resfood_Viewflow f10 = new Resfood_Viewflow(R.mipmap.first_t11);
+        resfoods.add(f10);
+        Resfood_Viewflow f11 = new Resfood_Viewflow(R.mipmap.first_t10);
+        resfoods.add(f11);
+        Resfood_Viewflow f12 = new Resfood_Viewflow(R.mipmap.first_t7);
+        resfoods.add(f12);
+        Resfood_Viewflow f13 = new Resfood_Viewflow(R.mipmap.first_r6);
+        resfoods.add(f13);
+        Resfood_Viewflow f14 = new Resfood_Viewflow(R.mipmap.first_r3);
+        resfoods.add(f14);
+        Resfood_Viewflow f15 = new Resfood_Viewflow(R.mipmap.first_t12);
+        resfoods.add(f15);
+
+
+        resfood_viewflows.add(resfoods.get(pos));
+        resfood_viewflows.add(resfoods.get(pos));
+        resfood_viewflows.add(resfoods.get(pos));
+        resfood_viewflows.add(resfoods.get(pos));
+
+        ViewFlowAdapter viewadapter = new ViewFlowAdapter(getActivity(),resfood_viewflows);
         mViewFlow.setAdapter(viewadapter);
 
-        mViewFlow.setmSideBuffer(resfoods.size()); // 实际图片张数，
+        mViewFlow.setmSideBuffer(resfood_viewflows.size()); // 实际图片张数，
         // 我的ImageAdapter实际图片张数为3
         mViewFlow.setFlowIndicator(mFlowIndicator);
         mViewFlow.setTimeSpan(4500);
-        mViewFlow.setSelection(resfoods.size() * 1000); // 设置初始位置
+        mViewFlow.setSelection(resfood_viewflows.size() * 1000); // 设置初始位置
         mViewFlow.startAutoFlowTimer(); // 启动自动播放
     }
 }

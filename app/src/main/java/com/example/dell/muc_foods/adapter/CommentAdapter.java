@@ -14,7 +14,7 @@ import com.example.dell.muc_foods.R;
  */
 public class CommentAdapter extends  RecyclerView.Adapter<CommentAdapter.ViewHolder>{
 
-    private String[] names={"非常好","还不错","好烂啊","天下良心啊","下次还来","必须顶","beatiful","非常好","还不错","好烂啊","天下良心啊","下次还来","必须顶","beatiful"};
+    private String[] names = {"非常好","还不错","好烂啊","天下良心啊","下次还来","必须顶","beatiful","非常好","还不错","好烂啊","天下良心啊","下次还来","必须顶","beatiful"};
 
 
     public CommentAdapter() {

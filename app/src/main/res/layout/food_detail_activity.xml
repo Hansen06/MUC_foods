@@ -12,13 +12,6 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/tb_detail"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/material" />
-
-
         <android.support.design.widget.CoordinatorLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
@@ -26,57 +19,70 @@
 
             <android.support.design.widget.AppBarLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-<!--
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="200dp"
-                    android:text="食品图片1111111111111"
-                    android:textColor="@color/white"
-                    android:gravity="center"
-                    android:background="@color/gray"
-                    app:layout_scrollFlags="scroll|enterAlways" />
+                android:layout_height="wrap_content"
+                app:layout_scrollFlags="scroll|enterAlways">
 
-                <ImageView
-                    android:id="@+id/f_image"
+                <android.support.v7.widget.Toolbar
+                    android:id="@+id/tb_detail"
                     android:layout_width="match_parent"
-                    android:layout_height="200dp"
-                    android:background="@drawable/header"
+                    android:layout_height="wrap_content"
+                    android:background="@color/material"
+                    app:layout_behavior="scroll|exitUntilCollapsed"
                     app:layout_scrollFlags="scroll|enterAlways"/>
--->
-                <FrameLayout
-                    android:id="@+id/framelayout"
-                    android:layout_width="fill_parent"
-                    android:layout_height="200dp"
-                    android:orientation="vertical" >
 
-                    <com.example.dell.muc_foods.viewflow.ViewFlow
-                        android:id="@+id/viewflow"
-                        android:layout_width="fill_parent"
-                        android:layout_height="fill_parent" />
-
-                    <FrameLayout
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="bottom"
-                        android:background="#00000000"
+                <!--
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:text="食品图片1111111111111"
+                        android:textColor="@color/white"
                         android:gravity="center"
-                        android:padding="3dip" >
+                        android:background="@color/gray"
+                        app:layout_scrollFlags="scroll|enterAlways" />
 
-                        <com.example.dell.muc_foods.viewflow.CircleFlowIndicator
-                            android:id="@+id/viewflowindic"
-                            android:layout_width="wrap_content"
+                        <ImageView
+                            android:id="@+id/f_image"
+                            android:layout_width="match_parent"
+                            android:layout_height="200dp"
+                            android:background="@drawable/header"
+                            app:layout_scrollFlags="scroll|enterAlways"/>
+                        -->
+                    <FrameLayout
+                        android:id="@+id/framelayout"
+                        android:layout_width="fill_parent"
+                        android:layout_height="200dp"
+                        android:orientation="vertical"
+                        app:layout_scrollFlags="scroll|enterAlways"
+                        android:background="@color/white">
+
+                        <com.example.dell.muc_foods.viewflow.ViewFlow
+                            android:id="@+id/viewflow"
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent" />
+
+                        <FrameLayout
+                            android:layout_width="fill_parent"
                             android:layout_height="wrap_content"
-                            android:layout_gravity="center_horizontal|bottom"
-                            android:padding="2dip"
-                            app:activeColor="#ff0000"
-                            app:activeType="fill"
-                            app:circleSeparation="20dip"
-                            app:inactiveColor="#ffffff"
-                            app:inactiveType="fill"
-                            app:radius="4dip" />
+                            android:layout_gravity="bottom"
+                            android:background="#00000000"
+                            android:gravity="center"
+                            android:padding="3dip"
+                            app:layout_scrollFlags="scroll|enterAlways">
+
+                            <com.example.dell.muc_foods.viewflow.CircleFlowIndicator
+                                android:id="@+id/viewflowindic"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal|bottom"
+                                android:padding="2dip"
+                                app:activeColor="#ff0000"
+                                app:activeType="fill"
+                                app:circleSeparation="20dip"
+                                app:inactiveColor="#ffffff"
+                                app:inactiveType="fill"
+                                app:radius="4dip" />
+                        </FrameLayout>
                     </FrameLayout>
-                </FrameLayout>
 
                 <android.support.design.widget.TabLayout
                     android:id="@+id/tab_layout"
@@ -84,17 +90,15 @@
                     android:layout_height="wrap_content"
                     android:background="@color/white"
                     app:tabIndicatorColor="@color/material_dark"
-                    app:tabSelectedTextColor="@color/material_dark" />
+                    app:tabSelectedTextColor="@color/material_dark"/>
 
             </android.support.design.widget.AppBarLayout>
-
 
             <android.support.v4.view.ViewPager
                 android:id="@+id/view_pager_detail"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 app:layout_behavior="@string/appbar_scrolling_view_behavior" />
-
 
             <android.support.design.widget.FloatingActionButton
                 android:id="@+id/fab"
@@ -151,7 +155,7 @@
                 android:layout_height="wrap_content"
                 android:paddingRight="16dp"
                 android:gravity="right"
-                android:text="新建"
+                android:text="确定"
                 android:textColor="@color/red"/>
         </LinearLayout>
 

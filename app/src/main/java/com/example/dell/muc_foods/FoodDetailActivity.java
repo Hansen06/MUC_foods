@@ -43,6 +43,8 @@ public class FoodDetailActivity extends AppCompatActivity implements View.OnClic
 
         Toolbar tb= (Toolbar) findViewById(R.id.tb_detail );
         tb.setNavigationIcon(R.mipmap.ic_arrow_back_white);
+        tb.setTitle("美食详情");
+
         tb.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

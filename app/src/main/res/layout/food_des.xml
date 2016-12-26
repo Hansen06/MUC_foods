@@ -7,13 +7,15 @@
 
     <ImageView
         android:id="@+id/food_des_img"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
+        android:layout_width="320dp"
+        android:layout_height="220dp"
         android:adjustViewBounds="true"
+        android:layout_centerHorizontal="true"
 
-        android:background="@drawable/f1"/>
+        />
     <!--
-    android:scaleType="centerCrop"
+        android:background="@drawable/f1"
+        android:scaleType="centerCrop"
     -->
     <TextView
         android:id="@+id/food_des_title"

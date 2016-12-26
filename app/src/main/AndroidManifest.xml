@@ -7,12 +7,12 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/muc"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
         <activity
-            android:name=".MainActivity"
+            android:name=".LoginActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -26,11 +26,15 @@
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
 
+        <activity android:name=".MainActivity"></activity>
         <activity android:name=".FoodDetailActivity"></activity>
         <activity android:name=".ResDatailActivity"></activity>
 
 
         <activity android:name=".RegisterActivity"></activity>
+        <activity android:name=".ResDatailActivity$FavoriteActivity" />
+        <activity android:name=".FavoriteActivity"></activity>
+        <activity android:name=".C" />
 
     </application>
 
